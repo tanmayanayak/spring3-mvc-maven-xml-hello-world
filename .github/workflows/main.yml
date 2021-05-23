@@ -28,6 +28,5 @@ jobs:
         run: mvn -B package --file pom.xml
       - name: Deploy with Tomcat
         run : curl -v -u ${{ secrets.TOMCAT_USER }}:${{ secrets.TOMCAT_PASS }} -T /home/osboxes/actions-runner/_work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war 'http://d25587de5ed7.ngrok.io/manager/text/deploy?path=/github_action_spring&update=true'
-      - name: SonarQube Scan
-        uses: kitabisa/sonarqube-action@v1.1.0
+     
 
